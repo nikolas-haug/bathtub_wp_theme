@@ -203,3 +203,10 @@
     justify-content: center;
     align-items: center;
 }
+
+// Flex order
+@media (max-width: $medium) {
+    .flex-order-sm-1 {
+        order: 1;
+    }
+}

@@ -1,21 +1,18 @@
-/*!
-*
-* 
-* A lightweight front-end design framework/classkit for responsive design
-* and browser-consistent web apps
-*
-* Adapted from: 
-* Tania Rascia's Primitive UI: https://github.com/taniarascia/primitive
-* Flexbox Grid: https://github.com/kristoferjoseph/flexboxgrid
-* Bootstrap 4 grid/layout: https://getbootstrap.com
-*
+/* 
+
+    Theme Name: Bathtub Theme
+    Author: Niko
+    Author URI: https://nikolashaug.com
+    Description: A lightweight portfolio theme
+    Version: 1.0
+
 */
 
 //====================================================
 // CONFIG
 //====================================================
 
-@import "src/variables"; 
+@import "src/variables";
 @import "src/mixins";
 
 

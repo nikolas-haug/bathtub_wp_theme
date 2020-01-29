@@ -35,7 +35,7 @@
     width: 100%;
     // Controls the placement of the menu links
     margin: 0 0 0 0;
-    justify-content: space-around;
+    justify-content: center;
   }
 }
 
@@ -418,6 +418,11 @@ label {
 *
 */
 
+// Use for custom bg when bg-image selected
+// [class^="container"] {
+//   background: blue;
+// }
+
 .banner {
   margin-top: 5rem;
 }
@@ -446,5 +451,11 @@ label {
 }
 
 iframe {
-  max-width: 100%;
+  width: 100% !important;
+  margin: 0 0 $typography-margins 0;
+}
+
+// Contact form 7
+.wpcf7-submit {
+  width: 100%;
 }
