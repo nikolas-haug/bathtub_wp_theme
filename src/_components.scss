@@ -455,6 +455,13 @@ iframe {
   margin: 0 0 $typography-margins 0;
 }
 
+.row-gallery div {
+  padding-right: 0;
+   &:last-child {
+     padding-right: 1.5rem;
+   }
+}
+
 // Contact form 7
 .wpcf7-submit {
   width: 100%;
