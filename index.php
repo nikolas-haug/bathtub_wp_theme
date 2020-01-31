@@ -6,7 +6,14 @@
             <?php while(have_posts()) : the_post(); ?>
                 <h1><?php the_title( ); ?></h1>
 
-               
+                <?php 
+                    $meta_value = get_post_meta( get_the_ID(), 'meta-image', true );
+
+                    if( !empty( $meta_value ) ) { ?>
+                        <img src="<?php echo $meta_value ?>" alt="" style="max-width: 250px;">
+                 <?php   }
+                ?>
+
             <?php endwhile; ?>
         <?php endif; ?>
 
