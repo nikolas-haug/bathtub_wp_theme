@@ -1,21 +1,34 @@
-<?php get_header(); ?>
+<?php get_header();?>
 
-        <main class="container-med">
+        <main class="container">
 
-        <?php if(have_posts()) : ?>
-            <?php while(have_posts()) : the_post(); ?>
-                <h1><?php the_title( ); ?></h1>
+        <?php if (have_posts()): ?>
+            <?php while (have_posts()): the_post();?>
 
-                <?php 
-                    $meta_value = get_post_meta( get_the_ID(), 'meta-image', true );
+                    <div class="col">
+	                    <h1><?php the_title();?></h1>
+                    </div>
+	                                <div class="row row-gallery margin-bottom">
 
-                    if( !empty( $meta_value ) ) { ?>
-                        <img src="<?php echo $meta_value ?>" alt="" style="max-width: 250px;">
-                 <?php   }
-                ?>
+	                                        <?php
+                                            $meta_value = get_post_meta(get_the_ID(), 'your_fields', true);
 
-            <?php endwhile; ?>
-        <?php endif; ?>
+                                            $image_ids = explode(',', $meta_value['image']);?>
+
+	                                    <div class="col-3">
+	                                        <img src="<?php echo $image_ids[0]; ?>" class="img-cover">
+	                                    </div>
+	                                    <div class="col-5">
+	                                        <img src="<?php echo $image_ids[1]; ?>" class="img-cover">
+	                                    </div>
+	                                    <div class="col-4">
+	                                        <img src="<?php echo $image_ids[2]; ?>" class="img-cover">
+	                                    </div>
+
+	                                </div>
+
+	            <?php endwhile;?>
+        <?php endif;?>
 
             <section class="row">
 
@@ -47,4 +60,4 @@
 
         </main>
 
-<?php get_footer(  ); ?>
+<?php get_footer();?>

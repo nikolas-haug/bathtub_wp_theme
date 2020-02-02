@@ -26,30 +26,28 @@ Template Name: Three Image Header
 	                                    </h2>
 	                                </div>
 	                            <?php endif;?>
-                </div>
+                        </div>
 
-                            <div class="row row-gallery margin-bottom">
+	                                <div class="row row-gallery margin-bottom">
 
-                                <?php if (class_exists('Dynamic_Featured_Image')):
-                                    global $dynamic_featured_image;
-                                    global $post;
-                                    $featured_images = $dynamic_featured_image->get_featured_images($post->ID);
-                                ?>
+	                                        <?php
+                                            $meta_value = get_post_meta(get_the_ID(), 'your_fields', true);
 
-	                                    <div class="col-4">
-	                                        <img src="<?php echo $featured_images[0]['full']; ?>" alt="" class="img-cover">
-	                                    </div>
+                                            $image_ids = explode(',', $meta_value['image']);?>
+
 	                                    <div class="col-3">
-	                                        <img src="<?php echo $featured_images[1]['full']; ?>" alt="" class="img-cover">
+	                                        <img src="<?php echo $image_ids[0]; ?>" class="img-cover">
 	                                    </div>
 	                                    <div class="col-5">
-	                                        <img src="<?php echo $featured_images[2]['full']; ?>" alt="" class="img-cover">
+	                                        <img src="<?php echo $image_ids[1]; ?>" class="img-cover">
+	                                    </div>
+	                                    <div class="col-4">
+	                                        <img src="<?php echo $image_ids[2]; ?>" class="img-cover">
 	                                    </div>
 
-                                    <?php endif;?>
-                                    
-                            </div>
+	                                </div>
 
+                                
                         <div class="row">
 
                             <?php if (!is_page('tour/shows')): ?>
