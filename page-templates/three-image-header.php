@@ -33,15 +33,20 @@ Template Name: Three Image Header
 	                                        <?php
                                             $meta_value = get_post_meta(get_the_ID(), 'your_fields', true);
 
-                                            $image_ids = explode(',', $meta_value['image']);?>
+                                            if(!empty($meta_value)) {
+                                                $image_ids = explode(',', $meta_value['image']);
+                                                $columns = explode(',', $meta_value['text']);
+                                            }
+                                            ?>
+                                            
 
-	                                    <div class="col-3">
+	                                    <div class="col-<?php echo $columns[0]; ?>">
 	                                        <img src="<?php echo $image_ids[0]; ?>" class="img-cover">
 	                                    </div>
-	                                    <div class="col-5">
+	                                    <div class="col-<?php echo $columns[1]; ?>">
 	                                        <img src="<?php echo $image_ids[1]; ?>" class="img-cover">
 	                                    </div>
-	                                    <div class="col-4">
+	                                    <div class="col-<?php echo $columns[2]; ?>">
 	                                        <img src="<?php echo $image_ids[2]; ?>" class="img-cover">
 	                                    </div>
 
@@ -50,17 +55,27 @@ Template Name: Three Image Header
                                 
                         <div class="row">
 
-                            <?php if (!is_page('tour/shows')): ?>
+                        <!-- Main content section for all pages using this template -->
+                        <div class="col-12">
+                                <?php the_content();?>
+                            </div>
+
+                            <!-- Check if need to display custom post content -->
+                            <?php if (is_page(array('tour-shows', 'shows', 'dates'))): ?>
                                 <div class="col-12">
-                                    <h2>
+                                    <h3>
                                         Upcoming
-                                    </h2>
+                                    </h3>
+                                    <div class="col-12">
+                                        <p><a href="#">show link</a></p>
+                                        <p><a href="#">show link</a></p>
+                                        <p><a href="#">show link</a></p>
+                                        <p><a href="#">show link</a></p>
+                                        <p><a href="#">show link</a></p>
+                                    </div>
                                 </div>
                             <?php endif;?>
 
-                            <div class="col-12">
-                                <?php the_content();?>
-                            </div>
 
                         </div>
 
