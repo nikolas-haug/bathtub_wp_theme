@@ -1,13 +1,3 @@
-<?php 
-
-/* 
-
-    Template Name: Basic Template
-
-*/
-
-?>
-
 <?php get_header(); ?>
 
         <main class="container-med">
