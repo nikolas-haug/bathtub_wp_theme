@@ -64,11 +64,9 @@ function bathtub_custom_post_types() {
             'view_item' => 'View Show'
         ),
         'description' => 'Add show date and details.',
-        'show_in_rest' => true,
         'supports' => array(
             'title',
-            'editor',
-            'thumbnail'
+            'editor'
         ),
         'taxonomies' => array('shows'),
         'public' => true,
@@ -81,3 +79,6 @@ function bathtub_custom_post_types() {
     register_post_type( 'shows', $args );
 }
 add_action( 'init', 'bathtub_custom_post_types' );
+
+// Remove extra p tags in posts
+remove_filter('the_content', 'wpautop');
