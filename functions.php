@@ -38,3 +38,46 @@ function bathtub_theme_scripts()
 
 }
 add_action('wp_enqueue_scripts', 'bathtub_theme_scripts');
+
+// Widgets
+function init_widgets($id) {
+    register_sidebar( array(
+        'name' => 'Footer Area',
+        'id' => 'footer_area',
+        'before_widget' => '<div class="container-med">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>'
+    ));
+}
+add_action( 'widgets_init', 'init_widgets' );
+
+// Custom post types
+function bathtub_custom_post_types() {
+    $args = array(
+        'labels' => array(
+            'name' => __( 'Shows', 'shows' ),
+            'singular_name' => __( 'Show', 'show' ),
+            'add_new_item' => 'Add New Show',
+            'edit_item' => 'Edit Show',
+            'new_item' => 'New Show',
+            'view_item' => 'View Show'
+        ),
+        'description' => 'Add show date and details.',
+        'show_in_rest' => true,
+        'supports' => array(
+            'title',
+            'editor',
+            'thumbnail'
+        ),
+        'taxonomies' => array('shows'),
+        'public' => true,
+        'menu_position' => 50,
+        'menu_icon' => 'dashicons-images-alt2',
+        'has_archive' => true,
+        'capability_type' => 'post',
+        'rewrite' => array('slug' => 'shows')
+    );
+    register_post_type( 'shows', $args );
+}
+add_action( 'init', 'bathtub_custom_post_types' );
