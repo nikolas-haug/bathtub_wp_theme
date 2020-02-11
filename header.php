@@ -8,13 +8,16 @@
         <meta name="description" content="<?php bloginfo('description'); ?>"> 
         <?php wp_head(  ); ?>
 
-        <!-- Make space for fixed navbar on smaller screens when admin bar is visible (dev) -->
-        <script>
-            jQuery(document).ready(function($) {
-                var height= $(".nojq").height();
-                $(".main-navigation").css({top: height});
-            });
-        </script>
+        <!-- Customizer -->
+        <?php
+            $content_text_color = get_option('content_text_color');
+            $content_link_color = get_option('content_link_color');
+        ?>
+        <style>
+            p { color:  <?php echo $content_text_color; ?>; }
+            a { color:  <?php echo $content_link_color; ?>; }
+        </style>
+        <!-- end customizer -->
     </head>
 
     <body <?php body_class(); ?>>
