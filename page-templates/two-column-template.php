@@ -18,16 +18,16 @@
 
                     <?php if(have_posts()) : ?>
                         <?php while(have_posts()) : the_post(  ); ?>
-                            <div class="col-med-6 padding-top flex-order-sm-1">
+                            <div class="col col-med-6 padding-top padding-bottom flex-order-sm-1">
                                 <?php if(has_post_thumbnail()) : ?>
-                                    <?php the_post_thumbnail( 'full', array( 'class' => 'img-100' ) ); ?>
+                                    <?php the_post_thumbnail( 'full', array( 'class' => 'img-cover' ) ); ?>
                                 <?php endif; ?>
                             </div>
 
-                            <div class="col-med-6">
+                            <div class="col col-med-6">
                                 <h2 class="sub-title"><?php the_title(  ); ?></h2>
-                                <p>
-                                    <?php echo get_post_meta(get_the_ID(), 'sub_section', true); ?>
+                                <p class="<?php echo get_post_meta(get_the_ID(), 'extra_css', true) ?? ''; ?>">
+                                    <?php echo get_post_meta(get_the_ID(), 'extra_content', true); ?>
                                 </p>
                             </div>
                             

@@ -420,7 +420,13 @@ label {
 
 // Use for custom bg when bg-image selected
 // [class^="container"] {
-//   background: blue;
+//   background-color: $global-background-color;
+// }
+
+// [class^="container"] h1,
+// [class^="container"] h2,
+// [class^="container"] h3 {
+//   margin: 0;
 // }
 
 .banner {

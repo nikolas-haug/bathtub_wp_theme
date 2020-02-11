@@ -14,6 +14,7 @@ $(function(){
 
     // Hide the custom meta box(s)
     $('#your_fields_meta_box').hide();
+    $('#extra_content').hide();
 
     // Create an observer to watch for Gutenberg editor changes
     const observer = new MutationObserver( function( mutationsList, observer ){
@@ -29,6 +30,9 @@ $(function(){
                 if($templateField.val() === 'page-templates/three-image-header.php') {
                     $('#your_fields_meta_box').show();
                 }
+                if($templateField.val() === 'page-templates/two-column-template.php') {
+                    $('#extra_content').show();
+                }
             });
 
             // ...add the handler, then...
@@ -37,9 +41,15 @@ $(function(){
                 // ...do your on-change work here
                 if($(this).val() === 'page-templates/three-image-header.php') {
                     $('#your_fields_meta_box').show();
+                    $('#extra_content').hide();
+                } else if($(this).val() === 'page-templates/two-column-template.php') {
+                    $('#extra_content').show();
+                    $('#your_fields_meta_box').hide();
                 } else {
                     $('#your_fields_meta_box').hide();
+                    $('#extra_content').hide();
                 }
+                
 
             });
             observer.disconnect();
