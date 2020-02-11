@@ -50,7 +50,6 @@ $(function(){
                     $('#extra_content').hide();
                 }
                 
-
             });
             observer.disconnect();
 

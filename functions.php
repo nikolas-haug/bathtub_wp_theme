@@ -35,6 +35,7 @@ function bathtub_theme_scripts()
     define('THEME_VERSION', $theme->Version); // gets version written in your style.css
 
     wp_enqueue_style('main-style', get_stylesheet_uri(), array(), THEME_VERSION);
+    wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/inc/font-awesome.css' );
     wp_enqueue_script('jquery');
     wp_enqueue_script('navigation-js', get_template_directory_uri() . '/js/navigation.js', array(), null, true);
     wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.js', array(), null, true);

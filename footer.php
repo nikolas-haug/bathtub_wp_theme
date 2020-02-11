@@ -1,8 +1,11 @@
             <footer class="banner-bottom">
                 <div class="container-med">
-                    <div class="row">
+                    <div class="row banner-bottom__text">
                         <div class="col text-center">
-                            <p class="banner-bottom__text"><?php bloginfo('name'); ?> &copy; <?php echo date('Y'); ?></p>
+                            <span class="social-icon fab fa-facebook fa-2x"></span>
+                            <span class="social-icon fab fa-instagram fa-2x"></span>
+                            <span class="social-icon fab fa-bandcamp fa-2x"></span>
+                            <p><?php bloginfo('name'); ?> &copy; <?php echo date('Y'); ?></p>
                         </div>
                     </div>
                 </div>
