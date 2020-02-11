@@ -58,9 +58,19 @@ Template Name: Three Image Header
                         <?php if (is_page(array('tour-shows', 'shows', 'dates'))): ?>
                             <div class="col-12">
                                 <h3>
-                                    Upcoming
+                                    Upcoming Shows
                                 </h3>
                                     <?php include (locate_template('content/content-dates.php', false, false)); ?>
+                                <a href="#" class="button">
+                                    See Past Shows
+                                </a>
+                            </div>
+                            <div class="col-12">
+                                <h3>Past Shows</h3>
+                                <?php include (locate_template('content/content-dates-past.php', false, false)); ?>
+                                <a href="#" class="button">
+                                    See Upcoming Shows
+                                </a>
                             </div>
                         <?php endif;?>
 
