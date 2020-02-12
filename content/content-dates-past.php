@@ -10,9 +10,9 @@ $args = array(
     'meta_query' => array(
         'end_clause' => array(
             'key' => 'show_date',
-            'value' => $today,
-            'type' => 'NUMERIC',
-            'compare' => '<'
+            'value' => date('Y-m-d'),
+            'compare' => '<',
+            'type' => 'DATE'
 
         )
     )
@@ -23,11 +23,14 @@ $date_posts = new WP_Query($args);
 while ($date_posts->have_posts()) {
     $date_posts->the_post();
 
+    $originalDate = get_post_meta( get_the_ID(), 'show_date', true );
+    $newDate = date('M d, Y', strtotime($originalDate));
+    
     ?>
 
     <p class="date-ref">
         <a href="<?php echo get_post_meta(get_the_ID(), 'show_link', true); ?>" target="_blank">
-            <span><?php echo date('M d, Y', get_post_meta(get_the_ID(), 'show_date', true)); ?></span>
+            <span style="font-weight: bold;"><?php echo $newDate; ?></span>
             <span> - </span>
             <?php echo get_the_content(); ?>
         </a>

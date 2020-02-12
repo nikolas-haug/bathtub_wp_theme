@@ -48,10 +48,10 @@ function init_widgets($id) {
     register_sidebar( array(
         'name' => 'Footer Area',
         'id' => 'footer_area',
-        'before_widget' => '<div class="container-med">',
+        'before_widget' => '<div>',
         'after_widget' => '</div>',
-        'before_title' => '<h2>',
-        'after_title' => '</h2>'
+        'before_title' => '',
+        'after_title' => ''
     ));
 }
 add_action( 'widgets_init', 'init_widgets' );

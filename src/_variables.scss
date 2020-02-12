@@ -81,7 +81,8 @@ $color-secondary: lightblue;
 $color-tertiary: orange;
 
 $color-link: #3C2E37;
-$color-link-hover: lighten($color-link, 10%);
+// $color-link-hover: lighten($color-link, 10%);
+$color-link-hover: $font-color-primary;
 
 // Buttons
 $accent-color: grey;
