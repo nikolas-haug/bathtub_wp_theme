@@ -19,9 +19,9 @@
                     <?php if(have_posts()) : ?>
                         <?php while(have_posts()) : the_post(  ); ?>
                             <div class="col col-med-6 padding-top padding-bottom flex-order-sm-1">
-                            <?php if(is_active_sidebar( 'footer_area' )) : ?>
-                                <?php dynamic_sidebar('footer_area'); ?>
-                            <?php endif; ?>
+                                <?php if(is_active_sidebar( 'music_widget' )) : ?>
+                                    <?php dynamic_sidebar('music_widget'); ?>
+                                <?php endif; ?>
                             </div>
 
                             <div class="col col-med-6">

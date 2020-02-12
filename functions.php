@@ -46,8 +46,8 @@ add_action('wp_enqueue_scripts', 'bathtub_theme_scripts');
 // Widgets
 function init_widgets($id) {
     register_sidebar( array(
-        'name' => 'Footer Area',
-        'id' => 'footer_area',
+        'name' => 'Music Widget',
+        'id' => 'music_widget',
         'before_widget' => '<div>',
         'after_widget' => '</div>',
         'before_title' => '',
