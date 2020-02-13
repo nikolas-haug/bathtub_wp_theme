@@ -1198,10 +1198,13 @@ label {
 .banner {
   margin-top: 5rem; }
 
+.blog-header {
+  background: linear-gradient(to bottom left, #f22, #f2f, #22f, #2ff); }
+
 .title-tag a {
   color: #fff;
   text-decoration: none;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   text-shadow: 1px 2px 7px rgba(0, 0, 0, 0.9);
   transition: all 0.3s;
   display: inline-block; }
